@@ -1,0 +1,7 @@
+pymupdf
+langchain
+chromadb
+sentence-transformers
+openai
+pandas
+ollama
