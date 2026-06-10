@@ -1,0 +1,16 @@
+{
+    "company": "Apple",
+    "year": 2023,
+    "currency_unit": "USD millions",
+    "revenue": 383285.0,
+    "revenue_change_from_2022": -11043.0,
+    "revenue_growth_percent": -2.8,
+    "gross_margin_percent": 44.13,
+    "operating_margin_percent": 3.15,
+    "net_profit_margin_percent": 25.31,
+    "r_and_d_as_percent_of_sales": 7.8,
+    "sga_as_percent_of_sales": 6.5,
+    "operating_expenses_as_percent_of_sales": 14.31,
+    "liabilities_to_assets_percent": 82.37,
+    "cash_to_assets_percent": 8.5
+}
