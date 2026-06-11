@@ -57,13 +57,13 @@
     "operating_income": {
         "label": "operating income",
         "values": {
-            "2023": 12066.0,
-            "2022": 11569.0,
-            "2021": 9817.0
+            "2023": 114301.0,
+            "2022": 119437.0,
+            "2021": 108949.0
         },
-        "source_page": 50,
+        "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "raw_text": "Operating income"
     },
     "net_income": {
         "label": "net income",
