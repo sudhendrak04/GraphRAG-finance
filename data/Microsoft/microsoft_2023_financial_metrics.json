@@ -1,0 +1,98 @@
+{
+    "total_revenue": {
+        "label": "Total revenue",
+        "values": {
+            "2023": 211915.0,
+            "2022": 198270.0,
+            "2021": 168088.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "gross_profit": {
+        "label": "Gross margin",
+        "values": {
+            "2023": 146052.0,
+            "2022": 135620.0,
+            "2021": 115856.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "research_and_development": {
+        "label": "Research and development",
+        "values": {
+            "2023": 27195.0,
+            "2022": 24512.0,
+            "2021": 20716.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "selling_general_administrative": {
+        "label": "Sales and marketing",
+        "values": {
+            "2023": 22759.0,
+            "2022": 21825.0,
+            "2021": 20117.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "operating_income": {
+        "label": "Operating income",
+        "values": {
+            "2023": 88523.0,
+            "2022": 83383.0,
+            "2021": 69916.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "net_income": {
+        "label": "Net income",
+        "values": {
+            "2023": 72361.0,
+            "2022": 72738.0,
+            "2021": 61271.0
+        },
+        "source_page": 58,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "cash_and_equivalents": {
+        "label": "Cash and cash equivalents",
+        "values": {
+            "2023": 34704.0,
+            "2022": 13931.0
+        },
+        "source_page": 60,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "total_assets": {
+        "label": "Total assets",
+        "values": {
+            "2023": 411976.0,
+            "2022": 364840.0
+        },
+        "source_page": 60,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "total_liabilities": {
+        "label": "Total current liabilities",
+        "values": {
+            "2023": 104149.0,
+            "2022": 95082.0
+        },
+        "source_page": 60,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "fuzzy"
+    }
+}

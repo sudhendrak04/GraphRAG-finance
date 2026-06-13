@@ -1,0 +1,21 @@
+{
+    "company": "nvidia",
+    "_comment": "Maps NVIDIA 10-K raw label text to standard canonical keys. Labels verified against actual PDF extraction output.",
+    "mappings": {
+        "revenue": "total_revenue",
+        "gross profit": "gross_profit",
+        "income from operations": "operating_income",
+        "net income": "net_income",
+        "research and development": "research_and_development",
+        "sales, general and administrative": "selling_general_administrative",
+        "total operating expenses": "total_operating_expenses",
+        "cash and cash equivalents": "cash_and_equivalents",
+        "total liabilities": "total_liabilities",
+        "total liabilities and shareholders' equity": "total_assets"
+    },
+    "_notes": {
+        "operating_income": "NVIDIA calls this 'Income from operations', not 'Operating income'.",
+        "total_assets": "NVIDIA does not have a standalone 'Total assets' row. We use 'Total liabilities and shareholders equity' which equals total assets by accounting identity (Assets = Liabilities + Equity).",
+        "total_revenue": "NVIDIA reports a single 'Revenue' line — verified from extraction CSV."
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "company": "microsoft",
+    "_comment": "Maps Microsoft 10-K raw label text to standard canonical keys. Keys are lowercase for case-insensitive matching. Microsoft FY2023 10-K uses 'revenue' for top-line and 'gross margin' for gross profit.",
+    "mappings": {
+        "total revenue": "total_revenue",
+        "gross margin": "gross_profit",
+        "operating income": "operating_income",
+        "net income": "net_income",
+        "research and development": "research_and_development",
+        "sales and marketing": "selling_general_administrative",
+        "general and administrative": "selling_general_administrative",
+        "total operating expenses": "total_operating_expenses",
+        "total assets": "total_assets",
+        "total liabilities": "total_liabilities",
+        "cash and cash equivalents": "cash_and_equivalents"
+    },
+    "_notes": {
+        "selling_general_administrative": "Microsoft splits SG&A into 'sales and marketing' + 'general and administrative'. We map both to the same standard key. During extraction you will need to decide which one to use, or sum them.",
+        "total_operating_expenses": "Microsoft calls this 'total operating expenses' — verify exact wording in the PDF during extraction."
+    }
+}

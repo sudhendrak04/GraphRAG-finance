@@ -12,3 +12,5 @@ creating a seperate file for calculation of metrics , rather than telling the lo
 the whole extraction failed becuase I didnt analyzed the types of tables and their border in pdf, before I was using pyplumber python and now I am using pymupdf
 
 json had many duplicates values so the llm was not extracting the values correctly and calculating margin wrong , so we solved that
+
+using fuzzy matching (a programming technique used to find strings that are similar but not identical, example - amazon, amazom.com) for metrics in various upcoming pdfs

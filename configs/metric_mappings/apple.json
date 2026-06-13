@@ -1,0 +1,16 @@
+{
+    "company": "apple",
+    "_comment": "Maps Apple 10-K raw label text to standard canonical keys. Keys are lowercase for case-insensitive matching.",
+    "mappings": {
+        "total net sales": "total_revenue",
+        "gross margin": "gross_profit",
+        "operating income": "operating_income",
+        "net income": "net_income",
+        "research and development": "research_and_development",
+        "selling, general and administrative": "selling_general_administrative",
+        "total operating expenses": "total_operating_expenses",
+        "total assets": "total_assets",
+        "total liabilities": "total_liabilities",
+        "cash and cash equivalents": "cash_and_equivalents"
+    }
+}

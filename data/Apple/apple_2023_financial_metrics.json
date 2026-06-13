@@ -1,5 +1,5 @@
 {
-    "total_net_sales": {
+    "total_revenue": {
         "label": "total net sales",
         "values": {
             "2023": 383285.0,
@@ -8,9 +8,9 @@
         },
         "source_page": 51,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
-    "gross_margin": {
+    "gross_profit": {
         "label": "gross margin",
         "values": {
             "2023": 169148.0,
@@ -19,7 +19,7 @@
         },
         "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
     "research_and_development": {
         "label": "research and development",
@@ -30,9 +30,9 @@
         },
         "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
-    "selling_general_and_administrative": {
+    "selling_general_administrative": {
         "label": "selling, general and administrative",
         "values": {
             "2023": 24932.0,
@@ -41,7 +41,7 @@
         },
         "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
     "total_operating_expenses": {
         "label": "total operating expenses",
@@ -52,7 +52,7 @@
         },
         "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
     "operating_income": {
         "label": "operating income",
@@ -63,7 +63,7 @@
         },
         "source_page": 31,
         "source_type": "pymupdf_financial_line",
-        "raw_text": "Operating income"
+        "match_type": "exact"
     },
     "net_income": {
         "label": "net income",
@@ -74,9 +74,9 @@
         },
         "source_page": 38,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
-    "cash_and_cash_equivalents": {
+    "cash_and_equivalents": {
         "label": "cash and cash equivalents",
         "values": {
             "2023": 29965.0,
@@ -85,7 +85,7 @@
         },
         "source_page": 33,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
     "total_assets": {
         "label": "total assets",
@@ -96,7 +96,7 @@
         },
         "source_page": 33,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     },
     "total_liabilities": {
         "label": "total liabilities",
@@ -107,6 +107,6 @@
         },
         "source_page": 33,
         "source_type": "pymupdf_financial_line",
-        "raw_text": ""
+        "match_type": "exact"
     }
 }
