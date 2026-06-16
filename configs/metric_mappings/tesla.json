@@ -1,0 +1,24 @@
+{
+    "company": "tesla",
+    "_comment": "Verified against Tesla FY2022 10-K raw extraction CSV. Keys must match raw PDF labels (lowercased, with spaces).",
+    "_auto_generated": false,
+    "mappings": {
+        "total revenues": "total_revenue",
+        "gross profit": "gross_profit",
+        "research and development": "research_and_development",
+        "selling, general and administrative": "selling_general_administrative",
+        "total operating expenses": "total_operating_expenses",
+        "income from operations": "operating_income",
+        "net income": "net_income",
+        "total assets": "total_assets",
+        "total liabilities": "total_liabilities",
+        "cash and cash equivalents": "cash_and_equivalents"
+    },
+    "_notes": {
+        "total_revenue": "Tesla uses 'Total revenues' (plural, no 'net') as the top-line label.",
+        "operating_income": "Tesla calls this 'Income from operations', not 'Operating income'.",
+        "selling_general_administrative": "Tesla uses 'Selling, general and administrative' — note the comma after 'Selling'.",
+        "total_assets": "Tesla DOES have a 'Total assets' row on the balance sheet (page 48).",
+        "llm_failure": "LLM auto-mapper used underscore keys instead of space-separated raw labels. This file is manually corrected."
+    }
+}

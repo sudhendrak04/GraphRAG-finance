@@ -1,7 +1,14 @@
-pymupdf
-langchain
-chromadb
-sentence-transformers
-openai
-pandas
-ollama
+pymupdf>=1.27.0
+chromadb>=1.5.0
+sentence-transformers>=3.0.0
+ollama>=0.6.0
+pandas>=2.0.0
+numpy>=1.26.0
+ipykernel>=6.0.0
+
+
+# ============================================================
+# NOT required (removed from original list):
+#   openai     — not used anywhere in the codebase
+#   langchain  — not used anywhere in the codebase
+# ============================================================

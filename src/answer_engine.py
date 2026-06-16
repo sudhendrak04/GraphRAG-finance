@@ -49,7 +49,7 @@ def detect_calculation_intent(question):
     if "net profit margin" in q:
         return "net_profit_margin"
 
-    if "gross margin" in q and "%" in q:
+    if "gross margin" in q:
         return "gross_margin_percent"
 
     if "operating margin" in q:
@@ -71,6 +71,13 @@ def detect_calculation_intent(question):
 
     if "cash to assets" in q:
         return "cash_to_assets"
+
+    # Catch any "profit" question that wasn't matched above.
+    # This handles: "what is the profit?", "profit in 2022",
+    # "profit in percentages and amount", "how much profit?", etc.
+    # Returns BOTH the dollar amount (net income) and the % margin together.
+    if "profit" in q or "net income" in q or "earnings" in q:
+        return "profit_summary"
 
     return "rag_only"
 
@@ -102,6 +109,31 @@ def calculate_answer(question, metrics, year=2023):
 
     def _get(key, yr=year):
         return get_value(key, yr, metrics=metrics)
+
+    if intent == "profit_summary":
+        # Returns BOTH net income (dollar amount) AND net profit margin (%).
+        # This is what users mean when they ask "what is the profit in amount and %".
+        revenue   = _get("total_revenue")
+        net_income = _get("net_income")
+        pct = margin(net_income, revenue)
+
+        return {
+            "intent": intent,
+            "answer": (
+                f"In {year}, net income (profit) was {format_money(net_income)} million.\n"
+                f"Net profit margin was {format_percent(pct)} "
+                f"({format_money(net_income)} / {format_money(revenue)} × 100)."
+            ),
+            "calculation": (
+                f"Net income = {format_money(net_income)}M  |  "
+                f"Net profit margin = {format_money(net_income)} / {format_money(revenue)} × 100 "
+                f"= {format_percent(pct)}"
+            ),
+            "values_used": {
+                f"net_income_{year}": net_income,
+                f"total_revenue_{year}": revenue,
+            },
+        }
 
     if intent == "net_profit_margin":
         revenue = _get("total_revenue")
