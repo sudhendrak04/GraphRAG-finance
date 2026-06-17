@@ -1,0 +1,28 @@
+D:\sudhendra\learning projects\GraphRAG\configs\metric_mappings\apple.json
+D:\sudhendra\learning projects\GraphRAG\configs\metric_mappings\microsoft.json
+D:\sudhendra\learning projects\GraphRAG\configs\metric_mappings\nvidia.json
+D:\sudhendra\learning projects\GraphRAG\configs\metric_mappings\tesla.json
+D:\sudhendra\learning projects\GraphRAG\data\Apple\apple_2023_financial_analysis.json
+D:\sudhendra\learning projects\GraphRAG\data\Apple\apple_2023_financial_calculations.json
+D:\sudhendra\learning projects\GraphRAG\data\Apple\apple_2023_financial_metrics.json
+D:\sudhendra\learning projects\GraphRAG\data\Microsoft\microsoft_2023_financial_metrics.json
+D:\sudhendra\learning projects\GraphRAG\data\Nvidia\nvidia_2023_financial_metrics.json
+D:\sudhendra\learning projects\GraphRAG\data\Tesla\tesla_2022_financial_metrics.json
+D:\sudhendra\learning projects\GraphRAG\pipeline.py
+D:\sudhendra\learning projects\GraphRAG\src\__init__.py
+D:\sudhendra\learning projects\GraphRAG\src\answer_engine.py
+D:\sudhendra\learning projects\GraphRAG\src\auto_mapper.py
+D:\sudhendra\learning projects\GraphRAG\src\calculation_engine.py
+D:\sudhendra\learning projects\GraphRAG\src\comparator.py
+D:\sudhendra\learning projects\GraphRAG\src\extractor.py
+D:\sudhendra\learning projects\GraphRAG\src\metric_builder.py
+D:\sudhendra\learning projects\GraphRAG\src\schemas\__init__.py
+D:\sudhendra\learning projects\GraphRAG\src\schemas\financial_schema.py
+D:\sudhendra\learning projects\GraphRAG\src\utils.py
+D:\sudhendra\learning projects\GraphRAG\src\vector_pipeline.py
+D:\sudhendra\learning projects\GraphRAG\problems.md
+D:\sudhendra\learning projects\GraphRAG\requirements.txt
+D:\sudhendra\learning projects\GraphRAG\data\Apple\Apple23 report.pdf
+D:\sudhendra\learning projects\GraphRAG\data\Microsoft\microsoft_23'-10k.pdf
+D:\sudhendra\learning projects\GraphRAG\data\Nvidia\Nvidia23' -10k.pdf
+D:\sudhendra\learning projects\GraphRAG\data\Tesla\tesla 22 10-k.pdf

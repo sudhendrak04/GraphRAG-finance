@@ -1,0 +1,142 @@
+{
+  "D:\\sudhendra\\learning projects\\GraphRAG\\configs\\metric_mappings\\apple.json": {
+    "mtime": 1781359748.5759637,
+    "ast_hash": "12608e7daa396dac4af580b0e67f1a6d",
+    "semantic_hash": "12608e7daa396dac4af580b0e67f1a6d"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\configs\\metric_mappings\\microsoft.json": {
+    "mtime": 1781362227.1256163,
+    "ast_hash": "5dce508541eddd3005a7ed1a976e1242",
+    "semantic_hash": "5dce508541eddd3005a7ed1a976e1242"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\configs\\metric_mappings\\nvidia.json": {
+    "mtime": 1781363872.993635,
+    "ast_hash": "388b44e748859d6ef91ead31ab52d885",
+    "semantic_hash": "388b44e748859d6ef91ead31ab52d885"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\configs\\metric_mappings\\tesla.json": {
+    "mtime": 1781530018.3027344,
+    "ast_hash": "27154d396d3389b349bb2a13b5a43ef5",
+    "semantic_hash": "27154d396d3389b349bb2a13b5a43ef5"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Apple\\apple_2023_financial_analysis.json": {
+    "mtime": 1781192943.2791502,
+    "ast_hash": "f0960ab16cbd3a1f861993c9e0fdb288",
+    "semantic_hash": "f0960ab16cbd3a1f861993c9e0fdb288"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Apple\\apple_2023_financial_calculations.json": {
+    "mtime": 1781019809.063187,
+    "ast_hash": "11fb56b12ba993fa2ee1aa3c6a3e8538",
+    "semantic_hash": "11fb56b12ba993fa2ee1aa3c6a3e8538"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Apple\\apple_2023_financial_metrics.json": {
+    "mtime": 1781359893.213093,
+    "ast_hash": "2f8168bd37b43057bfa99cb7381d4a06",
+    "semantic_hash": "2f8168bd37b43057bfa99cb7381d4a06"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Microsoft\\microsoft_2023_financial_metrics.json": {
+    "mtime": 1781362952.3706012,
+    "ast_hash": "e75764b63f8e0a8f7d0750d74c94b36c",
+    "semantic_hash": "e75764b63f8e0a8f7d0750d74c94b36c"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Nvidia\\nvidia_2023_financial_metrics.json": {
+    "mtime": 1781363935.7452536,
+    "ast_hash": "345441ff4d6678940536b1339a26b77d",
+    "semantic_hash": "345441ff4d6678940536b1339a26b77d"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Tesla\\tesla_2022_financial_metrics.json": {
+    "mtime": 1781531133.2544222,
+    "ast_hash": "1ef44253b0e4b2272ce27abbda7bfbf1",
+    "semantic_hash": "1ef44253b0e4b2272ce27abbda7bfbf1"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\pipeline.py": {
+    "mtime": 1781531011.6929264,
+    "ast_hash": "800402d3cac01d670d66fa8cdd3e861b",
+    "semantic_hash": "800402d3cac01d670d66fa8cdd3e861b"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\__init__.py": {
+    "mtime": 1781359931.5203087,
+    "ast_hash": "33cc5b2d70329a652f16fb776d3df19a",
+    "semantic_hash": "33cc5b2d70329a652f16fb776d3df19a"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\answer_engine.py": {
+    "mtime": 1781530852.390755,
+    "ast_hash": "5e29bef669a414cf6f7ff4a60587da88",
+    "semantic_hash": "5e29bef669a414cf6f7ff4a60587da88"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\auto_mapper.py": {
+    "mtime": 1781530213.1471598,
+    "ast_hash": "a2dbba71421f78bf713e534ab19b3104",
+    "semantic_hash": "a2dbba71421f78bf713e534ab19b3104"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\calculation_engine.py": {
+    "mtime": 1781362252.0100074,
+    "ast_hash": "4b62f310721d9e87dc1f06b12263b08d",
+    "semantic_hash": "4b62f310721d9e87dc1f06b12263b08d"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\comparator.py": {
+    "mtime": 1781619884.2750375,
+    "ast_hash": "5096d558f7789fce48247c88df9e0085",
+    "semantic_hash": "5096d558f7789fce48247c88df9e0085"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\extractor.py": {
+    "mtime": 1781362220.3654282,
+    "ast_hash": "f2674488356c2bb887259a4232a819f9",
+    "semantic_hash": "f2674488356c2bb887259a4232a819f9"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\metric_builder.py": {
+    "mtime": 1781362132.007806,
+    "ast_hash": "6cf7e75bb50bd3aea8ac5f67412b3540",
+    "semantic_hash": "6cf7e75bb50bd3aea8ac5f67412b3540"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\schemas\\__init__.py": {
+    "mtime": 1781359709.1982107,
+    "ast_hash": "321bfc3f61a0402e3ec4f8f405248937",
+    "semantic_hash": "321bfc3f61a0402e3ec4f8f405248937"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\schemas\\financial_schema.py": {
+    "mtime": 1781362132.010592,
+    "ast_hash": "917d9bcf32971d7a34fc9454b43783fe",
+    "semantic_hash": "917d9bcf32971d7a34fc9454b43783fe"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\utils.py": {
+    "mtime": 1781198367.842404,
+    "ast_hash": "44286d43d475790215dbe45003eb4b6a",
+    "semantic_hash": "44286d43d475790215dbe45003eb4b6a"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\src\\vector_pipeline.py": {
+    "mtime": 1781434870.5870366,
+    "ast_hash": "4ee268eb78b7c81e6d00f932d9b25de2",
+    "semantic_hash": "4ee268eb78b7c81e6d00f932d9b25de2"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\problems.md": {
+    "mtime": 1781358927.1839557,
+    "ast_hash": "d0527c970aa38d0016d20da4cbabc49b",
+    "semantic_hash": "d0527c970aa38d0016d20da4cbabc49b"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\requirements.txt": {
+    "mtime": 1781531458.3030572,
+    "ast_hash": "935761ac223378cfb3d10df05d1b36cd",
+    "semantic_hash": "935761ac223378cfb3d10df05d1b36cd"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Apple\\Apple23 report.pdf": {
+    "mtime": 1780492054.936812,
+    "ast_hash": "2de8f4054a22cc0c92f34f2d6f5396ef",
+    "semantic_hash": "2de8f4054a22cc0c92f34f2d6f5396ef"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Microsoft\\microsoft_23'-10k.pdf": {
+    "mtime": 1781197338.574898,
+    "ast_hash": "9c0ac15520ee685a7e21f3d916a17b25",
+    "semantic_hash": "9c0ac15520ee685a7e21f3d916a17b25"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Nvidia\\Nvidia23' -10k.pdf": {
+    "mtime": 1781363457.2166612,
+    "ast_hash": "bc5e7ca6fadcc613b7086342f7152ba7",
+    "semantic_hash": "bc5e7ca6fadcc613b7086342f7152ba7"
+  },
+  "D:\\sudhendra\\learning projects\\GraphRAG\\data\\Tesla\\tesla 22 10-k.pdf": {
+    "mtime": 1781528981.9696715,
+    "ast_hash": "b07c744e413d518a9fa1a6689f5c9975",
+    "semantic_hash": "b07c744e413d518a9fa1a6689f5c9975"
+  }
+}
