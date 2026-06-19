@@ -1,0 +1,44 @@
+[
+    {
+        "question": "What was Tesla's total revenue in 2022?",
+        "type": "deterministic",
+        "expected_value": 81462.0,
+        "tolerance": 1.0,
+        "year": 2022
+    },
+    {
+        "question": "What was Tesla's gross margin in 2022?",
+        "type": "deterministic",
+        "expected_value": 25.60,
+        "tolerance": 0.1,
+        "year": 2022
+    },
+    {
+        "question": "What was Tesla's net income in 2022?",
+        "type": "deterministic",
+        "expected_value": 12587.0,
+        "tolerance": 1.0,
+        "year": 2022
+    },
+    {
+        "question": "What was Tesla's operating margin in 2022?",
+        "type": "deterministic",
+        "expected_value": 16.76,
+        "tolerance": 0.1,
+        "year": 2022
+    },
+    {
+        "question": "What was Tesla's net margin in 2022?",
+        "type": "deterministic",
+        "expected_value": 15.45,
+        "tolerance": 0.1,
+        "year": 2022
+    },
+    {
+        "question": "What was Tesla's R&D expense in 2022?",
+        "type": "deterministic",
+        "expected_value": 3075.0,
+        "tolerance": 1.0,
+        "year": 2022
+    }
+]

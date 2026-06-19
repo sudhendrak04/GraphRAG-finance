@@ -1,0 +1,109 @@
+{
+    "total_revenue": {
+        "label": "Total net sales",
+        "values": {
+            "2022": 383285.0,
+            "2021": 394328.0,
+            "2020": 365817.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "gross_profit": {
+        "label": "Gross margin",
+        "values": {
+            "2022": 169148.0,
+            "2021": 170782.0,
+            "2020": 152836.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "research_and_development": {
+        "label": "Research and development",
+        "values": {
+            "2022": 29915.0,
+            "2021": 26251.0,
+            "2020": 21914.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "selling_general_administrative": {
+        "label": "Selling, general and administrative",
+        "values": {
+            "2022": 24932.0,
+            "2021": 25094.0,
+            "2020": 21973.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "total_operating_expenses": {
+        "label": "Total operating expenses",
+        "values": {
+            "2022": 54847.0,
+            "2021": 51345.0,
+            "2020": 43887.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "operating_income": {
+        "label": "Operating income",
+        "values": {
+            "2022": 114301.0,
+            "2021": 119437.0,
+            "2020": 108949.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "net_income": {
+        "label": "Net income",
+        "values": {
+            "2022": 96995.0,
+            "2021": 99803.0,
+            "2020": 94680.0
+        },
+        "source_page": 31,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "cash_and_equivalents": {
+        "label": "Cash and cash equivalents",
+        "values": {
+            "2022": 29965.0,
+            "2021": 23646.0
+        },
+        "source_page": 33,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "total_assets": {
+        "label": "Total assets",
+        "values": {
+            "2022": 352583.0,
+            "2021": 352755.0
+        },
+        "source_page": 33,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "exact"
+    },
+    "total_liabilities": {
+        "label": "Total current liabilities",
+        "values": {
+            "2022": 145308.0,
+            "2021": 153982.0
+        },
+        "source_page": 33,
+        "source_type": "pymupdf_financial_line",
+        "match_type": "fuzzy"
+    }
+}
