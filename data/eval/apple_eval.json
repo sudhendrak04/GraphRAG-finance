@@ -1,44 +1,44 @@
 [
     {
-        "question": "What was Apple's total revenue in 2022?",
+        "question": "What was Apple's total revenue in 2023?",
         "type": "deterministic",
-        "expected_value": 394328.0,
+        "expected_value": 383285.0,
         "tolerance": 1.0,
-        "year": 2022
+        "year": 2023
     },
     {
-        "question": "What was Apple's gross margin in 2022?",
+        "question": "What was Apple's gross margin in 2023?",
         "type": "deterministic",
-        "expected_value": 43.31,
+        "expected_value": 44.13,
         "tolerance": 0.1,
-        "year": 2022
+        "year": 2023
     },
     {
-        "question": "What was Apple's net income in 2022?",
+        "question": "What was Apple's net income in 2023?",
         "type": "deterministic",
-        "expected_value": 99803.0,
+        "expected_value": 96995.0,
         "tolerance": 1.0,
-        "year": 2022
+        "year": 2023
     },
     {
-        "question": "What was Apple's operating margin in 2022?",
+        "question": "What was Apple's operating margin in 2023?",
         "type": "deterministic",
-        "expected_value": 30.29,
+        "expected_value": 29.82,
         "tolerance": 0.1,
-        "year": 2022
+        "year": 2023
     },
     {
-        "question": "What was Apple's net margin in 2022?",
+        "question": "What was Apple's net margin in 2023?",
         "type": "deterministic",
         "expected_value": 25.31,
         "tolerance": 0.1,
-        "year": 2022
+        "year": 2023
     },
     {
-        "question": "What was Apple's R&D expense in 2022?",
+        "question": "What was Apple's R&D expense in 2023?",
         "type": "deterministic",
-        "expected_value": 26251.0,
+        "expected_value": 29915.0,
         "tolerance": 1.0,
-        "year": 2022
+        "year": 2023
     }
 ]

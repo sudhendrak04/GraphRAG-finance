@@ -46,8 +46,11 @@ def detect_calculation_intent(question):
     """
     q = question.lower()
 
-    if "net profit margin" in q:
+    if "net profit margin" in q or "net margin" in q:
         return "net_profit_margin"
+
+    if "total revenue" in q or "total sales" in q:
+        return "total_revenue"
 
     if "gross margin" in q:
         return "gross_margin_percent"
@@ -209,6 +212,22 @@ def calculate_answer(question, metrics, year=2023):
                 f"research_and_development_{year}": rd,
                 f"total_net_sales_{year}": revenue,
             },
+        }
+
+    if intent == "research_and_development":
+        rd = _get("research_and_development")
+        return {
+            "intent": intent,
+            "answer": f"Research and development expense in {year} was {format_money(rd)}.",
+            "values_used": {f"research_and_development_{year}": rd},
+        }
+
+    if intent == "total_revenue":
+        revenue = _get("total_revenue")
+        return {
+            "intent": intent,
+            "answer": f"Total revenue in {year} was {format_money(revenue)}.",
+            "values_used": {f"total_revenue_{year}": revenue},
         }
 
     if intent == "revenue_growth":
@@ -445,8 +464,9 @@ def answer_financial_question(
         prompt = f"""
 You are a financial report assistant.
 
-Use the deterministic calculation result as the primary answer.
-Use the retrieved context only to support explanation and source references.
+CRITICAL: The deterministic calculation result below is the ONLY source of truth for all numbers.
+Do NOT report any number from the retrieved context. If the context shows a different number, ignore it.
+The retrieved context is for source references only.
 
 Question:
 {question}
@@ -454,16 +474,16 @@ Question:
 Deterministic calculation result:
 {json.dumps(calculation_result, indent=4)}
 
-Retrieved context:
+Retrieved context (for source references only — never use its numbers):
 {context}
 
 Write a clean final answer in this format:
 
 ### Answer
-[Clear direct answer]
+[Clear direct answer using ONLY the number from the deterministic result above]
 
 ### Values Used
-[List values used]
+[List values from the deterministic result]
 
 ### Calculation
 [Show formula and calculation]
