@@ -2,7 +2,7 @@
 
 A financial analysis system that combines **Knowledge Graphs**, **Vector RAG**, and **Deterministic Calculations** to answer questions about company financial reports.
 
-Built from scratch — no LangChain, no LlamaIndex. Just Python, Neo4j, ChromaDB, and a local LLM (Mistral via Ollama).
+Built from scratch ï¿½ no LangChain, no LlamaIndex. Just Python, Neo4j, ChromaDB, and a local LLM (Mistral via Ollama).
 
 ---
 
@@ -33,7 +33,7 @@ PDF
  +-- financial_metrics.json   ---- Deterministic path
  +-- Neo4j (knowledge graph)  ---- Graph RAG path
           ?
-    hybrid_ask() — combines all three ? LLM ? answer
+    hybrid_ask() ï¿½ combines all three ? LLM ? answer
 ```
 
 ---
@@ -60,7 +60,6 @@ python -m venv .venv
 
 # 3. Install dependencies
 pip install -r requirements.txt
-pip install flask neo4j
 
 # 4. Make sure Ollama is running with Mistral
 ollama pull mistral
@@ -85,17 +84,17 @@ data/
 
 ## Running
 
-### Step 1 — Build the vector store and extract metrics
+### Step 1 ï¿½ Build the vector store and extract metrics
 
 Open `code/evaluation.ipynb` and run `run_full_pipeline()` for each company.
 
-### Step 2 — Build the knowledge graph
+### Step 2 ï¿½ Build the knowledge graph
 
 Open `code/build_company_graph.ipynb` and run `build_company_graph()` for each company.  
 This sends every text chunk to Mistral and stores extracted entities/relationships in Neo4j.  
 **Note:** This takes 15-30 minutes per company depending on PDF size.
 
-### Step 3 — Start the web UI
+### Step 3 ï¿½ Start the web UI
 
 ```bash
 python app.py
@@ -113,16 +112,16 @@ GraphRAG-finance/
 +-- pipeline.py               PDF ingestion, ChromaDB, metrics extraction
 +-- requirements.txt
 +-- src/
-¦   +-- answer_engine.py      Deterministic math + Vector RAG
-¦   +-- evaluator.py          Accuracy testing
-¦   +-- graph_store.py        Neo4j read/write
-¦   +-- graph_extractor.py    LLM-based entity/relationship extraction
-¦   +-- graph_pipeline.py     Orchestrates graph building from chunks
-¦   +-- graph_ask.py          Graph traversal question answering
-¦   +-- hybrid_ask.py         Combines all three sources
-¦   +-- compare_ask.py        Side-by-side company comparison
+ï¿½   +-- answer_engine.py      Deterministic math + Vector RAG
+ï¿½   +-- evaluator.py          Accuracy testing
+ï¿½   +-- graph_store.py        Neo4j read/write
+ï¿½   +-- graph_extractor.py    LLM-based entity/relationship extraction
+ï¿½   +-- graph_pipeline.py     Orchestrates graph building from chunks
+ï¿½   +-- graph_ask.py          Graph traversal question answering
+ï¿½   +-- hybrid_ask.py         Combines all three sources
+ï¿½   +-- compare_ask.py        Side-by-side company comparison
 +-- templates/
-¦   +-- index.html            Web UI
+ï¿½   +-- index.html            Web UI
 +-- data/                     Place your PDFs here
 ```
 
@@ -142,7 +141,7 @@ Entity types: `Company`, `Person`, `Product`, `Risk`, `Location`, `Regulation`, 
 ## Limitations
 
 - Graph extraction quality depends on Mistral (7B). Larger models give better results.
-- Hub nodes (the main company node) have 100+ connections — retrieval is capped at 60 paths per query.
+- Hub nodes (the main company node) have 100+ connections ï¿½ retrieval is capped at 60 paths per query.
 - Graph building is slow locally (~3-5 sec per chunk). Using an API-based model (GPT-4o) reduces this to ~30 min total.
 
 ---
