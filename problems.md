@@ -14,3 +14,8 @@ the whole extraction failed becuase I didnt analyzed the types of tables and the
 json had many duplicates values so the llm was not extracting the values correctly and calculating margin wrong , so we solved that
 
 using fuzzy matching (a programming technique used to find strings that are similar but not identical, example - amazon, amazom.com) for metrics in various upcoming pdfs
+
+
+after the GraphRAG was made we excountered the HUB problem, which comes after the hub node is connected to many other entities and the LLM isnt able to traverse them all and therefore it doesn't provide correct output, 
+
+In this case we have to combine both the Vector RAG and Graph RAG for good quality output

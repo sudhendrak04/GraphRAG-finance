@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphRAG -- Financial Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #08080f;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #6c63ff;
+            --accent2: #a78bfa;
+            --green: #34d399;
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --card-blur: blur(18px);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse 80% 60% at 20% 10%, rgba(108, 99, 255, .15) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(167, 139, 250, .10) 0%, transparent 60%);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 2.5rem;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 8, 15, .7);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -.02em;
+        }
+
+        .logo span {
+            color: var(--accent2);
+        }
+
+        .badge {
+            font-size: .7rem;
+            font-weight: 500;
+            padding: .25rem .65rem;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -.03em;
+            background: linear-gradient(135deg, #fff 30%, var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin-bottom: .75rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .pills {
+            display: flex;
+            gap: .5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .pill {
+            font-size: .72rem;
+            padding: .3rem .8rem;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        .mode-toggle {
+            display: flex;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 2rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mode-btn {
+            padding: .55rem 1.6rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: .9rem;
+            font-weight: 500;
+            background: transparent;
+            color: var(--muted);
+            transition: all .2s;
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(108, 99, 255, .35);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: var(--card-blur);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .4);
+        }
+
+        .company-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .company-btn {
+            flex: 1;
+            padding: .85rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--muted);
+            font-family: inherit;
+            font-size: .9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            transition: all .2s;
+        }
+
+        .company-btn:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
+        .company-btn.selected {
+            border-color: var(--accent);
+            color: var(--text);
+            background: rgba(108, 99, 255, .12);
+            box-shadow: 0 0 0 1px var(--accent) inset;
+        }
+
+        .company-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .question-label {
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            margin-bottom: .5rem;
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
+            color: var(--text);
+            font-family: inherit;
+            font-size: .95rem;
+            resize: vertical;
+            min-height: 90px;
+            outline: none;
+            transition: border .2s;
+        }
+
+        textarea:focus {
+            border-color: var(--accent);
+        }
+
+        textarea::placeholder {
+            color: var(--muted);
+        }
+
+        .submit-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+
+        button.submit {
+            padding: .75rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: .95rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            transition: opacity .2s, transform .15s;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        button.submit:hover {
+            opacity: .9;
+            transform: translateY(-1px);
+        }
+
+        button.submit:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, .3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .answer-box {
+            margin-top: 2rem;
+            display: none;
+            animation: fadeUp .35s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .answer-header {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: 1rem;
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .answer-header::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            display: block;
+        }
+
+        .answer-content {
+            background: rgba(255, 255, 255, .025);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            font-size: .93rem;
+            line-height: 1.8;
+            color: var(--text);
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .tag-graph {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .tag-vector {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .tag-det {
+            color: #34d399;
+            font-weight: 600;
+        }
+
+        .tag-people {
+            color: #f472b6;
+            font-weight: 600;
+        }
+
+        .compare-info {
+            display: flex;
+            gap: .75rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .company-chip {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .4rem .9rem;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            font-size: .8rem;
+            color: var(--muted);
+        }
+
+        .error-msg {
+            color: #f87171;
+            font-size: .88rem;
+            margin-top: .75rem;
+            display: none;
+        }
+
+        .suggested {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .suggested-label {
+            width: 100%;
+            font-size: .75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            margin-bottom: .15rem;
+        }
+
+        .suggest-chip {
+            font-size: .78rem;
+            padding: .3rem .75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all .18s;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .suggest-chip:hover {
+            border-color: var(--accent2);
+            color: var(--text);
+            background: rgba(108, 99, 255, .08);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem 1.25rem;
+            }
+
+            main {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .company-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">&#11041;</div>
+            <h1>Graph<span>RAG</span></h1>
+        </div>
+        <span class="badge">Financial Intelligence</span>
+    </header>
+    <main>
+        <div class="hero">
+            <h2>Ask Anything About<br />Financial Reports</h2>
+            <p>Powered by knowledge graphs, vector search, and deterministic calculations.</p>
+            <div class="pills">
+                <span class="pill">Knowledge Graph</span>
+                <span class="pill">Vector RAG</span>
+                <span class="pill">Deterministic Math</span>
+                <span class="pill">Company Comparison</span>
+            </div>
+        </div>
+        <div class="mode-toggle">
+            <button class="mode-btn active" id="btn-ask" onclick="setMode('ask')">Ask a Company</button>
+            <button class="mode-btn" id="btn-compare" onclick="setMode('compare')">Compare Companies</button>
+        </div>
+        <div id="panel-ask" class="card">
+            <div class="company-row">
+                <button class="company-btn selected" id="co-apple" onclick="selectCompany('apple')">
+                    <span class="company-dot" style="background:#a3e635;"></span> Apple (2023)
+                </button>
+                <button class="company-btn" id="co-microsoft" onclick="selectCompany('microsoft')">
+                    <span class="company-dot" style="background:#60a5fa;"></span> Microsoft (2023)
+                </button>
+            </div>
+            <div class="suggested">
+                <span class="suggested-label">Try asking</span>
+                <button class="suggest-chip" onclick="fillQ('ask','What are the main risks this company faces?')">Main
+                    risks</button>
+                <button class="suggest-chip" onclick="fillQ('ask','Who is the CEO?')">CEO</button>
+                <button class="suggest-chip"
+                    onclick="fillQ('ask','What products does this company sell?')">Products</button>
+                <button class="suggest-chip" onclick="fillQ('ask','What is the gross margin?')">Gross margin</button>
+                <button class="suggest-chip" onclick="fillQ('ask','What is the exposure to China?')">China
+                    exposure</button>
+            </div>
+            <label class="question-label" for="ask-input">Your question</label>
+            <textarea id="ask-input"
+                placeholder="Ask anything about the selected company's financials, risks, products, or leadership..."></textarea>
+            <div class="error-msg" id="ask-error"></div>
+            <div class="submit-row">
+                <button class="submit" id="ask-btn" onclick="submitAsk()">
+                    <span class="spinner" id="ask-spinner"></span>
+                    <span id="ask-btn-label">Analyze</span>
+                </button>
+            </div>
+            <div class="answer-box" id="ask-answer">
+                <div class="answer-header">Answer</div>
+                <div class="answer-content" id="ask-answer-text"></div>
+            </div>
+        </div>
+        <div id="panel-compare" class="card" style="display:none;">
+            <div class="compare-info">
+                <span class="company-chip"><span class="company-dot"
+                        style="background:#a3e635;margin-right:.3rem;"></span>Apple 2023</span>
+                <span style="color:var(--muted);font-size:.85rem;">vs</span>
+                <span class="company-chip"><span class="company-dot"
+                        style="background:#60a5fa;margin-right:.3rem;"></span>Microsoft 2023</span>
+            </div>
+            <div class="suggested">
+                <span class="suggested-label">Try asking</span>
+                <button class="suggest-chip" onclick="fillQ('compare','Which company has better gross margin?')">Gross
+                    margin</button>
+                <button class="suggest-chip" onclick="fillQ('compare','Compare the risks each company faces.')">Risk
+                    comparison</button>
+                <button class="suggest-chip"
+                    onclick="fillQ('compare','Which company has stronger cloud or services revenue?')">Cloud
+                    revenue</button>
+                <button class="suggest-chip"
+                    onclick="fillQ('compare','Who has a more diversified product portfolio?')">Products</button>
+            </div>
+            <label class="question-label" for="compare-input">Comparison question</label>
+            <textarea id="compare-input"
+                placeholder="Ask a comparative question about Apple vs Microsoft..."></textarea>
+            <div class="error-msg" id="compare-error"></div>
+            <div class="submit-row">
+                <button class="submit" id="compare-btn" onclick="submitCompare()">
+                    <span class="spinner" id="compare-spinner"></span>
+                    <span id="compare-btn-label">Compare</span>
+                </button>
+            </div>
+            <div class="answer-box" id="compare-answer">
+                <div class="answer-header">Comparison Report</div>
+                <div class="answer-content" id="compare-answer-text"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let currentCompany = 'apple';
+        function setMode(mode) {
+            document.getElementById('panel-ask').style.display = mode === 'ask' ? 'block' : 'none';
+            document.getElementById('panel-compare').style.display = mode === 'compare' ? 'block' : 'none';
+            document.getElementById('btn-ask').classList.toggle('active', mode === 'ask');
+            document.getElementById('btn-compare').classList.toggle('active', mode === 'compare');
+        }
+        function selectCompany(co) {
+            currentCompany = co;
+            document.getElementById('co-apple').classList.toggle('selected', co === 'apple');
+            document.getElementById('co-microsoft').classList.toggle('selected', co === 'microsoft');
+        }
+        function fillQ(mode, text) {
+            document.getElementById(mode === 'ask' ? 'ask-input' : 'compare-input').value = text;
+        }
+        function colorAnswer(text) {
+            return text
+                .replace(/\[KNOWLEDGE GRAPH[^\]]*\]/g, m => `<span class="tag-graph">${m}</span>`)
+                .replace(/\[DOCUMENT TEXT[^\]]*\]/g, m => `<span class="tag-vector">${m}</span>`)
+                .replace(/\[DETERMINISTIC[^\]]*\]/g, m => `<span class="tag-det">${m}</span>`)
+                .replace(/\[LEADERSHIP[^\]]*\]/g, m => `<span class="tag-people">${m}</span>`);
+        }
+        async function submitAsk() {
+            const q = document.getElementById('ask-input').value.trim();
+            const errEl = document.getElementById('ask-error');
+            errEl.style.display = 'none';
+            if (!q) { errEl.textContent = 'Please enter a question.'; errEl.style.display = 'block'; return; }
+            setLoading('ask', true);
+            document.getElementById('ask-answer').style.display = 'none';
+            try {
+                const res = await fetch('/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ company: currentCompany, question: q }) });
+                const data = await res.json();
+                if (data.error) throw new Error(data.error);
+                document.getElementById('ask-answer-text').innerHTML = colorAnswer(data.answer);
+                document.getElementById('ask-answer').style.display = 'block';
+            } catch (e) { errEl.textContent = 'Error: ' + e.message; errEl.style.display = 'block'; }
+            finally { setLoading('ask', false); }
+        }
+        async function submitCompare() {
+            const q = document.getElementById('compare-input').value.trim();
+            const errEl = document.getElementById('compare-error');
+            errEl.style.display = 'none';
+            if (!q) { errEl.textContent = 'Please enter a question.'; errEl.style.display = 'block'; return; }
+            setLoading('compare', true);
+            document.getElementById('compare-answer').style.display = 'none';
+            try {
+                const res = await fetch('/compare', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: q }) });
+                const data = await res.json();
+                if (data.error) throw new Error(data.error);
+                document.getElementById('compare-answer-text').innerHTML = colorAnswer(data.answer);
+                document.getElementById('compare-answer').style.display = 'block';
+            } catch (e) { errEl.textContent = 'Error: ' + e.message; errEl.style.display = 'block'; }
+            finally { setLoading('compare', false); }
+        }
+        function setLoading(mode, loading) {
+            document.getElementById(`${mode}-spinner`).style.display = loading ? 'block' : 'none';
+            document.getElementById(`${mode}-btn-label`).textContent = loading ? 'Analyzing...' : (mode === 'ask' ? 'Analyze' : 'Compare');
+            document.getElementById(`${mode}-btn`).disabled = loading;
+        }
+        document.getElementById('ask-input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitAsk(); } });
+        document.getElementById('compare-input').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitCompare(); } });
+    </script>
+</body>
+
+</html>
