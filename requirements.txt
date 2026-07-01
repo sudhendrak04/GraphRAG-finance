@@ -8,9 +8,3 @@ ipykernel>=6.0.0
 flask>=3.1.0
 neo4j>=5.0.0
 
-
-# ============================================================
-# NOT required (removed from original list):
-#   openai     — not used anywhere in the codebase
-#   langchain  — not used anywhere in the codebase
-# ============================================================
