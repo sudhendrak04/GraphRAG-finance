@@ -7,6 +7,7 @@ Loads both company pipelines at startup, then serves
 hybrid_ask and compare_ask via HTTP endpoints.
 """
 
+import os
 from flask import Flask, request, jsonify, render_template
 from pipeline import run_full_pipeline
 from src.hybrid_ask  import hybrid_ask
@@ -15,9 +16,9 @@ from src.compare_ask import compare_ask
 app = Flask(__name__)
 
 NEO4J = {
-    "neo4j_uri" : "bolt://127.0.0.1:7687",
-    "neo4j_user": "neo4j",
-    "neo4j_pass": "sudhendra@123",
+    "neo4j_uri" : os.environ.get("NEO4J_URI",  "bolt://127.0.0.1:7687"),
+    "neo4j_user": os.environ.get("NEO4J_USER", "neo4j"),
+    "neo4j_pass": os.environ.get("NEO4J_PASS", "sudhendra@123"),
 }
 
 print("Loading Apple pipeline...")
@@ -51,8 +52,12 @@ def ask():
         return jsonify({"error": f"Unknown company: {company}"}), 400
 
     result, year = PIPELINES[company]
-    answer = hybrid_ask(question, company, result, year=year, **NEO4J)
-    return jsonify({"answer": answer})
+    try:
+        answer = hybrid_ask(question, company, result, year=year, **NEO4J)
+        return jsonify({"answer": answer})
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/compare", methods=["POST"])
@@ -63,14 +68,18 @@ def compare():
     result_a, year_a = PIPELINES["apple"]
     result_b, year_b = PIPELINES["microsoft"]
 
-    answer = compare_ask(
-        question,
-        "apple",     result_a, year_a,
-        "microsoft", result_b, year_b,
-        **NEO4J,
-    )
-    return jsonify({"answer": answer})
+    try:
+        answer = compare_ask(
+            question,
+            "apple",     result_a, year_a,
+            "microsoft", result_b, year_b,
+            **NEO4J,
+        )
+        return jsonify({"answer": answer})
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)

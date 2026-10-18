@@ -27,7 +27,7 @@ def build_company_graph(
 ) -> dict:
 
     company  = pipeline_result.company_name
-    collection = pipeline_result.collectionW
+    collection = pipeline_result.collection
 
     all_chunks = collection.get(where={"type": "text_chunk"})
     texts = all_chunks["documents"]
